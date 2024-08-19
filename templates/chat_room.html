@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Hub</title>
+    <link rel="icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="roomh1">CHAT ROOM #{{ room_id }}</h1>
+        <div class="main-container">
+            <div class="message-container">
+                <div class="message">
+                    <span class="timestamp">08/19/2024<br>12:34</span>
+                    <span class="username">Username: </span>
+                    <span class="text">Message content to be displayed. More text to test word wrap zzz. Message content to be displayed. More text to test word wrap zzz</span>
+                </div> 
+            </div>
+                       
+            <div class="send-container">
+                <input type="text" class="msg-input" id="msg" placeholder="Enter message">
+                <div class="send-button">➡</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const msgcont = document.querySelector('.message-container');
+            content = msgcont.innerHTML;
+
+            for (let i = 0; i < 50; i++) {
+                msgcont.innerHTML+=content;
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -19,15 +19,30 @@ body {
     text-align: center;
     background: rgb(43,49,55); 
     border-radius: 8px;
-    padding: 50px;
+    padding: 50px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    width: 800px;
+    margin: auto;
 }
 
-h1 {
+.mainh1 {
     margin-bottom: 20px;
     color: #e0e0e0; 
     padding-bottom: 20px;
     border-bottom: #444 3px solid; 
+}
+
+.roomh1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(43,49,55);
+    color: #e0e0e0;
+    padding: 20px 0;
+    padding-bottom: 20px;
+    margin: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 
 .button-container {
@@ -71,6 +86,98 @@ input {
     caret-color: transparent;
 }
 
+.message-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    text-wrap: wrap;
+    max-width: 800px;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.timestamp {
+    color: gray;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.username {
+    color: #00ff37;
+    margin-right: 5px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.text {
+    white-space: pre-wrap;
+    text-align: left;
+    font-size: 14px;
+}
+
+
+.send-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    background-color: rgb(43,49,55);
+    padding: 20px 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex; /* Add flexbox for alignment */
+    align-items: center; /* Align items vertically center */
+    justify-content: center; /* Center items horizontally */
+}
+
+.msg-input {
+    font-size: 16px;
+    padding: 0px 10px;
+    height: 40px;
+    text-align: left;
+    font-weight: 400;
+    caret-color: auto;
+    width: 700px;
+    max-width: 80vw;
+    border-radius: 0px; /* Adjusted to match send-button */
+    margin-right: 0px; /* Add margin to the right for spacing */
+    transition: box-shadow 0.2s ease-in;
+}
+
+.msg-input:focus {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.send-button {
+    font-size: 24px; /* Ensure font size is appropriate */
+    height: 40px; /* Match the height of the input */
+    line-height: 40px; /* Set line-height to match height for vertical centering */
+    padding: 0 15px; /* Horizontal padding */
+    border-radius: 0px; /* Match border-radius of input */
+    background-color: #007bff; /* Default background color */
+    color: #fff; /* Text color */
+    border: none;
+    cursor: pointer;
+    text-align: center; /* Center text horizontally */
+    display: inline-flex; /* Ensure button behaves like an inline-flex container */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #218838;
+    box-shadow: 0px 0px 10px #175f26; 
+}
+
+
 .create-room {
     background-color: rgb(33,38,45);
 }
@@ -87,4 +194,45 @@ input {
 .join-room:hover {
     background-color: #0056b3; 
     box-shadow: 0px 0px 10px #0056b3; 
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 20px 20px;
+    }
+
+    input {
+        font-size: 24px;
+    }
+
+    .message-container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .msg-input {
+        font-size: 10px;
+    }
+
+    .send-button {
+        font-size: 12px;
+        padding: 10px 10px;
+    }
+
+    .timestamp {
+        font-size: 8px;
+    }
+
+    .username {
+        font-size: 12px;
+    }
+
+    .text {
+        font-size: 10px;
+    }
 }
