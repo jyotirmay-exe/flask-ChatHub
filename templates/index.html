@@ -14,29 +14,10 @@
             <div class="button create-room" id="createnew" onclick="window.location.href='/create_room'">Create New Room</div>
             <div class="button join-room" id="joinexisting" onclick="showField()">Join Existing Room</div>
             <input style="display:none;" id="roomID" oninput="editRoomID()" placeholder="ROOM #ID">
-            <div style="display:none;" class="button join-room" id="join" onclick="window.location.href='/join_room'">Join</div>
+            <div style="display:none;" class="button join-room" id="join" onclick="redirectRoom()">Join</div>
         </div>
     </div>
 
-    <script>
-        function showField() {
-            ele00 = document.getElementById("createnew");
-            ele01 = document.getElementById("joinexisting");
-            ele1 = document.getElementById("roomID");
-            ele2 = document.getElementById("join");
-            ele00.style.display = "none";
-            ele01.style.display = "none";
-            ele1.style.display = "inline-block";
-            ele2.style.display = "inline-block";
-        }
-
-        function editRoomID() {
-            roomid = document.getElementById("roomID");
-            roomid.value = roomid.value.toUpperCase();
-            if(roomid.value.length>6) {
-                roomid.value = roomid.value.slice(0,6);
-            }
-        }
-    </script>
+    <script src="/static/script.js"></script>
 </body>
 </html>
