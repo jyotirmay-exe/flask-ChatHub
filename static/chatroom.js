@@ -1,5 +1,28 @@
+let usnm = "";
+
+function formatMessage(date, time, user, text) {
+    date = date || new Date().toLocaleDateString();
+    time = time || new Date().toLocaleTimeString();
+
+    let message = `<div class="message">
+                <span class="timestamp">${date}<br>${time}</span>
+                <span class="username">${user}: </span>
+                <span class="text">${text}</span>
+                </div>`;
+    return message;
+}
+
 function sendHandler() {
-    console.log(document.getElementById("msg").value);
+    text = document.getElementById("msg").value;
+    if(text==null || text=="") { return; }
+    message = formatMessage(null,null,usnm,text);
+    const msgcont = document.querySelector('.message-container');
+    msgcont.innerHTML+=message;
+    scrollEnd();
+}
+
+function scrollEnd() {
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 function keyHandler(event) {
@@ -10,12 +33,9 @@ function keyHandler(event) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const msgcont = document.querySelector('.message-container');
-    content = msgcont.innerHTML;
-
-    for (let i = 0; i < 50; i++) {
-        msgcont.innerHTML+=content;
+    while(usnm=="" || usnm==null) {
+        usnm = prompt("Enter Display Name:");
     }
 
-    window.scrollTo(0, document.body.scrollHeight);
+    scrollEnd();
 });
