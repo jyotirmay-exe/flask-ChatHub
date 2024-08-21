@@ -133,9 +133,9 @@ input {
     background-color: rgb(43,49,55);
     padding: 20px 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    display: flex; /* Add flexbox for alignment */
-    align-items: center; /* Align items vertically center */
-    justify-content: center; /* Center items horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .msg-input {
@@ -147,8 +147,8 @@ input {
     caret-color: auto;
     width: 700px;
     max-width: 80vw;
-    border-radius: 0px; /* Adjusted to match send-button */
-    margin-right: 0px; /* Add margin to the right for spacing */
+    border-radius: 0px; 
+    margin-right: 0px;
     transition: box-shadow 0.2s ease-in;
 }
 
@@ -157,19 +157,19 @@ input {
 }
 
 .send-button {
-    font-size: 24px; /* Ensure font size is appropriate */
-    height: 40px; /* Match the height of the input */
-    line-height: 40px; /* Set line-height to match height for vertical centering */
-    padding: 0 15px; /* Horizontal padding */
-    border-radius: 0px; /* Match border-radius of input */
-    background-color: #007bff; /* Default background color */
-    color: #fff; /* Text color */
+    font-size: 24px;
+    height: 40px; 
+    line-height: 40px;
+    padding: 0 15px; 
+    border-radius: 0px;
+    background-color: #007bff; 
+    color: #fff;
     border: none;
     cursor: pointer;
-    text-align: center; /* Center text horizontally */
-    display: inline-flex; /* Ensure button behaves like an inline-flex container */
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -197,7 +197,7 @@ input {
     box-shadow: 0px 0px 10px #0056b3; 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     h1 {
         font-size: 20px;
     }
@@ -234,6 +234,6 @@ input {
     }
 
     .text {
-        font-size: 10px;
+        font-size: 12px;
     }
 }
