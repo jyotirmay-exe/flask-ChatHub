@@ -20,23 +20,13 @@
             </div>
                        
             <div class="send-container">
-                <input type="text" class="msg-input" id="msg" placeholder="Enter message">
-                <div class="send-button">➡</div>
+                <input type="text" class="msg-input" id="msg" placeholder="Enter message" onkeypress="keyHandler(event)">
+                <div class="send-button" onclick="sendHandler()">➡</div>
             </div>
         </div>
     </div>
 
     <script src="/static/script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const msgcont = document.querySelector('.message-container');
-            content = msgcont.innerHTML;
-
-            for (let i = 0; i < 50; i++) {
-                msgcont.innerHTML+=content;
-            }
-        });
-
-    </script>
+    <script src="/static/chatroom.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@
         <div class="button-container">
             <div class="button create-room" id="createnew" onclick="window.location.href='/create_room'">Create New Room</div>
             <div class="button join-room" id="joinexisting" onclick="showField()">Join Existing Room</div>
-            <input style="display:none;" id="roomID" oninput="editRoomID()" placeholder="ROOM #ID">
+            <input type="text" style="display:none;" id="roomID" oninput="editRoomID()" placeholder="ROOM #ID" autocomplete="off">
             <div style="display:none;" class="button join-room" id="join" onclick="redirectRoom()">Join</div>
         </div>
     </div>
