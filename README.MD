@@ -5,9 +5,9 @@ An anonymous chat application built with Flask, enabling users to exchange text 
 Users can create new rooms or join existing ones to communicate with others in the same room.
 
 ### // TO-DO: ###
-- Standardize front-end
-- Implement Room Creation/Joining
+- ~~Standardize front-end~~
+- ~~Implement Room Creation/Joining~~
+- Implement WebSocket for individual Rooms
 - Session based auth maybe
-- Websocket Comm within Rooms
 - Message history (probably)
 - Deploy if free
