@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,41 @@
     <link rel="icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="/static/styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1 class="roomh1">CHAT ROOM #{{ room_id }}</h1>
+    <div class="chat-container">
+
+        <div class="users-container" hidden="true">
+            <h3>Online Users</h3>
+            <ul class="users-list">
+                <li>User 1</li>
+                <li>User 2</li>
+                <li>User 3</li>
+                <li>User 4</li>
+                <li>User 5</li>
+                <li>User 6</li>
+                <li>User 7</li>
+            </ul>
+        </div>
+
+        <div class="header">
+            <img src="/static/icons/home.png" class="icon home-icon" alt="Home" onclick="window.location.href='/'">
+            <h1 class="roomh1">CHAT ROOM #{{ room_id }}</h1>
+            <img src="/static/icons/members.png" class="icon members-icon" alt="Members" onclick="toggleMembers()">
+        </div>
+
         <div class="main-container">
-            <div class="message-container">
-                <div class="message">
-                    <span class="timestamp">08/19/2024<br>12:34</span>
-                    <span class="username">Username: </span>
-                    <span class="text">Message content to be displayed. More text to test word wrap zzz. Message content to be displayed. More text to test word wrap zzz</span>
-                </div> 
-            </div>
-                       
+            <div class="message-container"></div>
+
             <div class="send-container">
-                <input type="text" class="msg-input" id="msg" placeholder="Enter message" onkeypress="keyHandler(event)">
+                <input type="text" class="msg-input" id="msg" placeholder="Enter message..."
+                    onkeypress="keyHandler(event)">
                 <div class="send-button" onclick="sendHandler()">➡</div>
             </div>
         </div>
     </div>
-
-    <script src="/static/script.js"></script>
-    <script src="/static/chatroom.js"></script>
+    <script src="/static/scripts/script.js"></script>
+    <script src="/static/scripts/chatroom.js"></script>
 </body>
+
 </html>

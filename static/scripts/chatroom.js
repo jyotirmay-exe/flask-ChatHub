@@ -2,7 +2,7 @@ let usnm = "";
 
 function formatMessage(date, time, user, text) {
     date = date || new Date().toLocaleDateString();
-    time = time || new Date().toLocaleTimeString();
+    time = time || new Date().toLocaleTimeString("en-us", { hour12: false }).slice(0, 5);
 
     let message = `<div class="message">
                 <span class="timestamp">${date}<br>${time}</span>
@@ -14,11 +14,12 @@ function formatMessage(date, time, user, text) {
 
 function sendHandler() {
     text = document.getElementById("msg").value;
-    if(text==null || text=="") { return; }
-    message = formatMessage(null,null,usnm,text);
+    if (text == null || text == "") { return; }
+    message = formatMessage(null, null, usnm, text);
     const msgcont = document.querySelector('.message-container');
-    msgcont.innerHTML+=message;
+    msgcont.innerHTML += message;
     scrollEnd();
+    document.getElementById("msg").value = "";
 }
 
 function scrollEnd() {
@@ -26,16 +27,25 @@ function scrollEnd() {
 }
 
 function keyHandler(event) {
-    if(event.key==="Enter") {
+    if (event.key === "Enter") {
         sendHandler();
-        document.getElementById("msg").value = "";
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    while(usnm=="" || usnm==null) {
+window.onload = () => {
+    while (true) {
         usnm = prompt("Enter Display Name:");
+        if (usnm == "") { continue; }
+        else if (usnm == null) { window.location.href = "/"; break; }
+        else break;
     }
 
     scrollEnd();
-});
+};
+
+
+function toggleMembers() {
+    userDiv = document.querySelector(".users-container");
+    if (userDiv.hidden) { userDiv.hidden = false; }
+    else { userDiv.hidden = true; }
+}
