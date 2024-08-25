@@ -41,8 +41,13 @@
             </div>
         </div>
     </div>
-    <script src="/static/scripts/script.js"></script>
+    <script>
+        const roomID = "{{ room_id }}";
+    </script>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="/static/scripts/sockets.js"></script>
     <script src="/static/scripts/chatroom.js"></script>
+    <script src="/static/scripts/script.js"></script>
 </body>
 
 </html>
