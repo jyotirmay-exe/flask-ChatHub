@@ -13,7 +13,7 @@ def hasher(s, algorithm='sha256'):
     return hasher.hexdigest()
 
 def getDate():
-    return datetime.now().strftime("%d/%m/%Y")
+    return datetime.now().strftime("%d/%m/%y")
 
 def getTime():
     return datetime.now().strftime("%H:%M")
