@@ -18,6 +18,15 @@ function formatJoin(date, time, user) {
     return message;
 }
 
+function formatLeave(date, time, user) {
+    let message = `<div class="message">
+                <span class="timestamp">${date}<br>${time}</span>
+                <span class="username">[ ${user} ] : </span>
+                <span class="text leaveText">User disconnected. Goodbye.</span> 
+                </div>`;
+    return message;
+}
+
 function sendHandler() {
     text = document.getElementById("msg").value;
     if (text == null || text == "") { return; }
@@ -34,7 +43,7 @@ function keyHandler(event) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", (event) => {
+window.onload = (event) => {
     while (true) {
         usnm = prompt("Enter Display Name (No spaces. 12 characters max.):").split(' ')[0].slice(0, 12);
         if (usnm == "") { continue; }
@@ -47,7 +56,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
     scrollEnd();
-});
+};
 
 
 function toggleMembers() {
