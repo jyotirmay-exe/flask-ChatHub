@@ -1,9 +1,12 @@
 from flask import Flask, render_template, redirect, url_for
+from flask_socketio import SocketIO
+
 from modules.utils import *
 from modules.logger import *
 
 app = Flask(__name__)
 
+sockio = SocketIO(app)
 logger = getLogger()
 
 rooms = {}
@@ -18,7 +21,7 @@ def newRoom():
             logger.info(f"Created room: {room_id} ({hashed})")
             break
 
-    return f"NEW ROOM HERE - {room_id} - {hashed}"
+    return redirect(url_for("chatRoom", room_hash=hashed))
 
 @app.route("/join_room/<room_id>")
 def joinRoom(room_id):
@@ -44,5 +47,10 @@ def homepage():
     logger.info("Homepage accessed")
     return render_template('index.html')
 
+# Socket Handling
+@sockio.on("join")
+def on_join(event):
+    logger.info(f"User: \"{event['user']}\" joined Room ID: {event['room']}")
+
 if __name__ == "__main__":
-    app.run()
+    sockio.run(app)
