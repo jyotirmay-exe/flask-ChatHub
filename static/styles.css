@@ -160,30 +160,36 @@ input {
     display: flex;
     align-items: flex-start;
     max-width: 100%;
-    word-wrap: break-word;
     margin-bottom: 20px;
 }
 
 .timestamp {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: left;
     color: gray;
     font-size: 10px;
     font-weight: 700;
 }
 
-.username {
-    color: #00ff37;
+.username, .joinUser {
+    color: cyan;
+    text-align: left;
     margin: 0px 20px;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
+    width: 150px;
+    flex-shrink: 0;
 }
+
+.joinText { color: #00ff37; font-weight: 700; }
 
 .text {
     white-space: pre-wrap;
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
+    max-width: fit-content;
+    word-wrap: break-word;
 }
-
 
 .send-container {
     position: fixed;
@@ -307,10 +313,11 @@ input {
 
     .username {
         margin: 0 10px;
-        font-size: 12px;
+        font-size: 10px;
+        width: 100px
     }
 
     .text {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
