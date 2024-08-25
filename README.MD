@@ -11,3 +11,9 @@ Users can create new rooms or join existing ones to communicate with others in t
 - Session based auth maybe
 - Message history (probably)
 - Deploy if free
+
+### Resources ###
+- https://docs.python.org/3/library/hashlib.html
+- https://flask-socketio.readthedocs.io/en/latest/
+- https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
+- https://socket.io/docs/v4/client-installation/
