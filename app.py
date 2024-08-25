@@ -48,9 +48,15 @@ def homepage():
     return render_template('index.html')
 
 # Socket Handling
-@sockio.on("join")
+@sockio.on("client_join")
 def on_join(event):
     logger.info(f"User: \"{event['user']}\" joined Room ID: {event['room']}")
+    sockio.emit("broadcast_join", {'date': getDate(), 'time': getTime(), 'user': event['user']})
+
+@sockio.on("client_message")
+def on_message(event):
+    logger.info(f"Recvd. Message: {event['text']} from User: {event['user']}")
+    sockio.emit("broadcast_message", {'date': getDate(), 'time': getTime(), 'user': event['user'], 'text': event['text']})
 
 if __name__ == "__main__":
     sockio.run(app)

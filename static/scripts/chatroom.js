@@ -1,13 +1,19 @@
 let usnm = "";
 
 function formatMessage(date, time, user, text) {
-    date = date || new Date().toLocaleDateString();
-    time = time || new Date().toLocaleTimeString("en-us", { hour12: false }).slice(0, 5);
-
     let message = `<div class="message">
                 <span class="timestamp">${date}<br>${time}</span>
-                <span class="username">${user}: </span>
+                <span class="username">[ ${user} ] : </span>
                 <span class="text">${text}</span>
+                </div>`;
+    return message;
+}
+
+function formatJoin(date, time, user) {
+    let message = `<div class="message">
+                <span class="timestamp">${date}<br>${time}</span>
+                <span class="username">[ ${user} ] : </span>
+                <span class="text joinText">User connected. Welcome to the Room.</span> 
                 </div>`;
     return message;
 }
@@ -15,11 +21,7 @@ function formatMessage(date, time, user, text) {
 function sendHandler() {
     text = document.getElementById("msg").value;
     if (text == null || text == "") { return; }
-    message = formatMessage(null, null, usnm, text);
-    const msgcont = document.querySelector('.message-container');
-    msgcont.innerHTML += message;
-    scrollEnd();
-    document.getElementById("msg").value = "";
+    sendMessage(usnm, text);
 }
 
 function scrollEnd() {
@@ -34,7 +36,7 @@ function keyHandler(event) {
 
 document.addEventListener("DOMContentLoaded", (event) => {
     while (true) {
-        usnm = prompt("Enter Display Name:");
+        usnm = prompt("Enter Display Name (No spaces. 12 characters max.):").split(' ')[0].slice(0, 12);
         if (usnm == "") { continue; }
         else if (usnm == null) { window.location.href = "/"; break; }
         else {
