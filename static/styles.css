@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     font-family: "Poppins", monospace;
@@ -8,8 +8,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(36, 41, 46);
+    background-color: #171717;
     color: #dcdcdc;
     display: flex;
     justify-content: center;
@@ -17,14 +16,19 @@ body {
     height: 100vh;
 }
 
-.container {
+.container, .chat-container {
     text-align: center;
-    background: rgb(43, 49, 55);
+    background: #212121;
     border-radius: 8px;
     padding: 50px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     width: 800px;
     margin: auto;
+}
+
+.chat-container {
+    background-color: #171717;
+    box-shadow: none;
 }
 
 .mainh1 {
@@ -42,15 +46,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgb(43, 49, 55);
+    background: #212121;
     color: #e0e0e0;
-    padding: 20px 20px;
+    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-}
-
-.roomh1 {
-    margin: 0;
-    text-align: center;
 }
 
 .icon {
@@ -74,19 +73,16 @@ body {
     padding-top: 20px;
     align-items: center;
     justify-content: center;
-    margin: auto auto;
 }
 
 .button {
     height: 50px;
     width: 250px;
-    display: inline-block;
     padding: 15px 30px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
     color: #e0e0e0;
-    background-color: #007bff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -102,9 +98,9 @@ input {
     font-weight: bold;
     text-align: center;
     color: #fff;
-    background-color: #3b4044;
+    background-color: #272727;
     border: none;
-    outline: none;
+    outline: 1px solid #171717;
     border-radius: 5px;
     caret-color: transparent;
 }
@@ -113,7 +109,7 @@ input {
     position: fixed;
     right: 20px;
     top: 100px;
-    background-color: #3b4044;
+    background-color: #212121;
     padding: 20px;
     border-radius: 8px;
     color: #e0e0e0;
@@ -124,7 +120,7 @@ input {
 .users-container h3 {
     margin-bottom: 10px;
     font-size: 16px;
-    color: #00ff37;
+    color: #dcdcdc;
     text-align: center;
 }
 
@@ -138,36 +134,23 @@ input {
     padding: 5px 0;
 }
 
-.chat-container {
-    text-align: center;
-    /* background: rgb(43,49,55);  */
-    border-radius: 8px;
-    padding: 80px 20px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  */
-    width: 800px;
-    margin: auto;
-}
-
 .message-container {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 50px 0;
     font-size: 16px;
     font-weight: 400;
     text-align: center;
-    text-wrap: wrap;
     max-width: 800px;
 }
 
 .message {
     display: flex;
     align-items: flex-start;
-    max-width: 100%;
     word-wrap: break-word;
     margin-bottom: 20px;
 }
 
 .timestamp {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', sans-serif;
     color: gray;
     font-size: 10px;
     font-weight: 700;
@@ -186,7 +169,6 @@ input {
     font-size: 16px;
 }
 
-
 .send-container {
     position: fixed;
     bottom: 0;
@@ -194,8 +176,8 @@ input {
     transform: translateX(-50%);
     width: 800px;
     max-width: 80vw;
-    background-color: rgb(43, 49, 55);
-    padding: 20px 20px;
+    background-color: #212121;
+    padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     display: flex;
@@ -214,21 +196,18 @@ input {
     width: 700px;
     max-width: 80vw;
     border-radius: 20px 0 0 20px;
-    margin-right: 0px;
     transition: box-shadow 0.2s ease-in;
 }
 
 .send-button {
     font-size: 24px;
     height: 50px;
-    line-height: 40px;
     padding: 10px 15px;
     border-radius: 0 20px 20px 0;
     background-color: #007bff;
     color: #e0e0e0;
     border: none;
     cursor: pointer;
-    text-align: center;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -240,23 +219,14 @@ input {
     box-shadow: 0px 0px 10px #175f26;
 }
 
-
-.create-room {
-    background-color: rgb(33, 38, 45);
+.create-room, .join-room {
+    background-color: #171717;
 }
 
-.create-room:hover {
-    background-color: #218838;
-    box-shadow: 0px 0px 10px #218838;
-}
-
-.join-room {
-    background-color: rgb(33, 38, 45);
-}
-
-.join-room:hover {
-    background-color: #0056b3;
-    box-shadow: 0px 0px 10px #0056b3;
+.create-room:hover, .join-room:hover {
+    background-color: #dcdcdc;
+    color: #0e0e0e;
+    box-shadow: 0px 0px 10px #fff;
 }
 
 @media (max-width: 800px) {
@@ -266,7 +236,7 @@ input {
 
     .button {
         font-size: 12px;
-        padding: 20px 20px;
+        padding: 20px;
     }
 
     input {
@@ -281,7 +251,6 @@ input {
     .icon {
         width: 20px;
         height: 20px;
-        cursor: pointer;
     }
 
     .users-container h3 {
