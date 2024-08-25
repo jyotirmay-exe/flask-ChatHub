@@ -32,16 +32,20 @@ function keyHandler(event) {
     }
 }
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", (event) => {
     while (true) {
         usnm = prompt("Enter Display Name:");
         if (usnm == "") { continue; }
         else if (usnm == null) { window.location.href = "/"; break; }
-        else break;
+        else {
+            const event = new Event('userSet');
+            document.dispatchEvent(event);
+            break;
+        }
     }
 
     scrollEnd();
-};
+});
 
 
 function toggleMembers() {
