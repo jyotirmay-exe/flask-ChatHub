@@ -4,15 +4,9 @@ function formatMessage(date, time, user, text)
 {
     let message = `
         <div class="message">
-            <span class="timestamp">
-                ${date}<br>${time}
-            </span>
-            <span class="username">
-                [ ${user} ] :
-            </span>
-            <span class="text">
-                ${text}
-            </span>
+            <span class="timestamp">${date}<br>${time}</span>
+            <span class="username">[ ${user} ] :</span>
+            <span class="text">${text}</span>
         </div>`;
     return message;
 }
@@ -21,15 +15,9 @@ function formatJoin(date, time, user)
 {
     let message = `
         <div class="message">
-            <span class="timestamp">
-                ${date}<br>${time}
-            </span>
-            <span class="username">
-                [ ${user} ] :
-            </span>
-            <span class="text joinText">
-                User connected. Welcome to the Room.
-            </span>
+            <span class="timestamp">${date}<br>${time}</span>
+            <span class="username">[ ${user} ] :</span>
+            <span class="text joinText">User connected. Welcome to the Room.</span>
         </div>`;
     return message;
 }
@@ -38,15 +26,9 @@ function formatLeave(date, time, user)
 {
     let message = `
         <div class="message">
-            <span class="timestamp">
-                ${date}<br>${time}
-            </span>
-            <span class="username">
-                [ ${user} ] :
-            </span>
-            <span class="text leaveText">
-                User disconnected. Goodbye.
-            </span>
+            <span class="timestamp">${date}<br>${time}</span>
+            <span class="username">[ ${user} ] :</span>
+            <span class="text leaveText">User disconnected. Goodbye.</span>
         </div>`;
     return message;
 }
