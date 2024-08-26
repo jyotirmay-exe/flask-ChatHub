@@ -27,7 +27,10 @@
 
         <div class="header">
             <img src="/static/icons/home.png" class="icon home-icon" alt="Home" onclick="window.location.href='/'">
-            <h1 class="roomh1">CHAT ROOM #{{ room_id }}</h1>
+            <div class="title-container">
+                <h1 class="roomh1">CHAT ROOM #{{ room_id }}</h1>
+                <a href="https://github.com/jyotirmay-exe/"><img src="/static/icons/gh-icon.png" class="logo-img" alt="GH Logo"></a>
+            </div>
             <img src="/static/icons/members.png" class="icon members-icon" alt="Members" onclick="toggleMembers()">
         </div>
 
