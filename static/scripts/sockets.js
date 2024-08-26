@@ -39,10 +39,15 @@ function sendMessage(user, text)
     console.log("Message sent:", text);
 }
 
+document.querySelector('.members-icon').addEventListener('click', () => {
+    sockio.emit('client_getuserlist', { room: roomID, user: usnm });
+});
+
 sockio.on("broadcast_join", (event) => 
 {
     const joinText = formatJoin(event.date, event.time, event.user);
     messageCont.innerHTML += `${joinText}`;
+    scrollEnd();
     console.log("User joined:", event.user);
 });
 
@@ -50,6 +55,7 @@ sockio.on("broadcast_leave", (event) =>
 {
     const leaveText = formatLeave(event.date, event.time, event.user);
     messageCont.innerHTML += leaveText;
+    scrollEnd();
     console.log("User left:", event.user);
 });
 
@@ -60,4 +66,20 @@ sockio.on("broadcast_message", (event) =>
     document.getElementById("msg").value = "";
     scrollEnd();
     console.log("Received message from:", event.user, "Text:", event.text);
+});
+
+sockio.on("broadcast_userlist", (event) => 
+{
+    console.log(`Got User List : ${typeof(event.list)}`);
+    ulist = document.querySelector(".users-list");
+    ulist.innerHTML = "";
+    event.list.forEach(ele => {
+        ulist.innerHTML += `<li>${ele}</li>`;
+    });
+});
+
+sockio.on("broadcast_room404", () => 
+{
+    alert("Room does not exist. Redirecting...");
+    window.location.href="/";
 });
