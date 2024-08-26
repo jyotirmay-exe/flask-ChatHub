@@ -8,7 +8,7 @@ Users can create new rooms or join existing ones to communicate with others in t
 - ~~Standardize front-end~~
 - ~~Implement Room Creation/Joining~~
 - ~~Implement WebSocket for individual Rooms~~
-- Connected users list
+- ~~Connected users list~~
 - Session based auth maybe
 - Message history (probably)
 - Deploy if free
