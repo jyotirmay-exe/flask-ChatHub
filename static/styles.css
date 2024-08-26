@@ -6,7 +6,6 @@
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
     background-color: #171717;
     color: #dcdcdc;
     display: flex;
@@ -80,7 +79,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     user-select: none;
-    transition: background-color 0.5s ease, box-shadow 0.3s ease;
 }
 input {
     height: 50px;
@@ -144,7 +142,6 @@ input {
     margin-bottom: 20px;
 }
 .timestamp {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: left;
     color: gray;
     font-size: 10px;
@@ -195,7 +192,6 @@ input {
     max-width: 80vw;
     border-radius: 20px 0 0 20px;
     margin-right: 0px;
-    transition: box-shadow 0.2s ease-in;
 }
 .send-button {
     font-size: 24px;
@@ -212,7 +208,6 @@ input {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .send-button:hover {
     background-color: #218838;
