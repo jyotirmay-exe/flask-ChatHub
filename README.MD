@@ -7,7 +7,8 @@ Users can create new rooms or join existing ones to communicate with others in t
 ### // TO-DO: ###
 - ~~Standardize front-end~~
 - ~~Implement Room Creation/Joining~~
-- Implement WebSocket for individual Rooms
+- ~~Implement WebSocket for individual Rooms~~
+- Connected users list
 - Session based auth maybe
 - Message history (probably)
 - Deploy if free
@@ -15,5 +16,5 @@ Users can create new rooms or join existing ones to communicate with others in t
 ### Resources ###
 - https://docs.python.org/3/library/hashlib.html
 - https://flask-socketio.readthedocs.io/en/latest/
-- https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
 - https://socket.io/docs/v4/client-installation/
+- https://github.com/socketio/socket.io-client/issues/1451
