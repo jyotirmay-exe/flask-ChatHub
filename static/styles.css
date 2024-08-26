@@ -108,7 +108,7 @@ input {
 .users-container {
     position: fixed;
     right: 20px;
-    top: 100px;
+    top: 150px;
     background-color: #212121;
     padding: 20px;
     border-radius: 8px;
@@ -126,8 +126,9 @@ input {
     list-style: none;
 }
 .users-list li {
+    font-weight: 700;
     font-family: monospace;
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px 0;
 }
 .chat-container {
