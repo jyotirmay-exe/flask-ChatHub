@@ -23,20 +23,13 @@ document.addEventListener("visibilitychange", () =>
     tabHidden = document.hidden;
     if (tabHidden) 
     {
+        sockio.emit("client_leave", { room: roomID, user: usnm });
         console.log("Tab is now hidden.");
     } 
     else 
     {
         console.log("Tab is now visible.");
-    }
-});
-
-window.addEventListener("beforeunload", (event) => 
-{
-    if (!tabHidden) 
-    {
-        sockio.emit("client_leave", { room: roomID, user: usnm });
-        console.log("Emitted client_leave event.");
+        sockio.emit("client_join", { room: roomID, user: usnm });
     }
 });
 
