@@ -46,11 +46,10 @@ flask run --host "0.0.0.0"
 - Responsive design for easy viewing on all devices
 
 ## Screens ##
+<img src="./static/readme-screens/pchome.png" alt="pc" width="500"/> <br>
 <img src="./static/readme-screens/pcss1.png" alt="pc" width="500"/> <br>
 <img src="./static/readme-screens/phoness.png" alt="phone" height="500"/>
 <img src="./static/readme-screens/pcss2.png" alt="pc" width="500"/>
-
-
 
 ## Resources ##
 - https://docs.python.org/3/library/hashlib.html
